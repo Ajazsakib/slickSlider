@@ -4,11 +4,14 @@ console.log(slideBox.length);
 let prev = document.getElementById("prev");
 let next = document.getElementById("next");
 
+let indicator = document.querySelectorAll(".indicator div");
+
 let size = slideBox[0].clientWidth;
 console.log(size);
 
 currentSlide = 0;
-
+showSlides(currentSlide);
+indicator[currentSlide].classList.add("active");
 
 
 next.addEventListener("click", function() {
@@ -28,4 +31,18 @@ function showSlides(n) {
   		
   	}
 
+  	for(let i=0; i<slideBox.length; i++) {
+  		indicator[i].className = indicator[i].className.replace("active",  "");
+  	}
+
+
+
+}
+
+for(let i=0; i<slideBox.length; i++) {
+	indicator[i].addEventListener("click", function() {
+		showSlides(currentSlide = i);
+		
+		indicator[currentSlide].classList.add("active");
+	});
 }

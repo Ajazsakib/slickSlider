@@ -67,3 +67,24 @@ body {
 	line-height: 30px;
 	font-weight: bold;	
 }
+
+.indicator {
+position: absolute;
+left: 40%;
+bottom: 10px;
+}
+
+.indicator div {
+	width: 15px;
+	height: 15px;
+	background-color: #000000;
+	border-radius: 100%;
+	display: inline-block;
+	margin: 0px 5px;
+	cursor: pointer;
+	opacity: 0.4;
+}
+
+.indicator div.active {
+	opacity: 1;
+}
