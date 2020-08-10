@@ -35,7 +35,7 @@ function showSlides(n) {
   		indicator[i].className = indicator[i].className.replace("active",  "");
   	}
 
-
+  	indicator[currentSlide].classList.add("active");
 
 }
 
@@ -43,6 +43,6 @@ for(let i=0; i<slideBox.length; i++) {
 	indicator[i].addEventListener("click", function() {
 		showSlides(currentSlide = i);
 		
-		indicator[currentSlide].classList.add("active");
+		
 	});
 }
